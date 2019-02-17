@@ -7,7 +7,7 @@ $NoPelanggan = $_POST['NoPelanggan'];
 $TahunTagih = $_POST['TahunTagih']; 
 $BulanTagih = $_POST['BulanTagih']; 
 $JumlahPemakaian = $_POST['JumlahPemakaian'];
-$sql = "select * from tbtagihan where NoPelanggan='$NoPelanggan' And TahunTagih='$TahunTagih' And BulanTagih='$BulanTagih'";
+$sql = "select * from tbtagihan where NoTagihan='$NoPelanggan' And NoPelanggan='$NoPelanggan' And TahunTagih='$TahunTagih' And BulanTagih='$BulanTagih'";
 $query = query($sql);
 $cek = hitungBaris($query);
 if($cek > 0)
