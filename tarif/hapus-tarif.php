@@ -6,26 +6,27 @@ include '../koneksi.php';
 $kode = $_GET['kode'];
 $hapus = mysql_query("delete from tbtarif where KodeTarif='$kode'");
 $cek = query("select * from tbpelanggan join tbtarif using(KodeTarif) where KodeTarif='$kode'");
-if($hapus)
-{
-    echo "<script>
-    alert('Data Berhasil Dihapus');
-    location.href='tampil-tarif.php';
-    </script>";
-}
-elseif($cek > 0)
-{
-    echo "<script>
-    alert('Data GAGAL Dihapus Karena Data Ini Masih Ada Relasi Di Tarif');
-    location.href='tampil-tarif.php';
-    </script>";
-}
-else
-{
-    echo "<script>
-    alert('Data GAGAL Dihapus');
-    location.href='tampil-tarif.php';
-    </script>";
+    if($hapus)
+    {
+        echo "<script>
+        alert('Data Berhasil Dihapus');
+        location.href='tampil-tarif.php';
+        </script>";
+    }
+    elseif($cek > 0)
+    {
+        echo "<script>
+        alert('Data GAGAL Dihapus Karena Data Ini Masih Ada Relasi Di Tarif');
+        location.href='tampil-tarif.php';
+        </script>";
+    }
+    else
+    {
+        echo "<script>
+        alert('Data GAGAL Dihapus');
+        location.href='tampil-tarif.php';
+        </script>";
+    }
 
 }
 else

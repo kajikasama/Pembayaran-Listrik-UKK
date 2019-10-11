@@ -9,7 +9,7 @@ $NamaLengkap = $_POST['NamaLengkap'];
 $Level = $_POST['Level'];
 $sql = ("select * from tblogin where Username='$Username'");
 $query = query($sql);
-$cekuser = hitungBaris($query);
+$cekuser = hitungBaris($query); 
     if($cekuser > 0)
     {
         echo "<script>

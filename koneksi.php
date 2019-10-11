@@ -1,49 +1,56 @@
 <?php
 
-mysql_connect('localhost','root','');
-mysql_select_db('listrik');
+$konek = mysqli_connect('localhost','root','','listrik');
 
 function query($sql){
-    $query = mysql_query($sql);
+    global $konek;
+    $query = mysqli_query($konek,$sql);
     return $query;
 }
 function jadiArray($query){
-    $hasil = mysql_fetch_array($query);
+    global $konek;
+    $hasil = mysqli_fetch_array($query);
     return $hasil;
 }
 function hitungBaris($query){
-    $cek = mysql_num_rows($query);
+    global $konek;
+    $cek = mysqli_num_rows($query);
     return $cek;
 }
 
-        function hitungBarisTarif(){
+    function hitungBarisTarif(){
+    global $konek;
     $sql = "select * from tbtarif";
-    $query = mysql_query($sql);
-    $hitung = mysql_num_rows($query);
+    $query = mysqli_query($konek,$sql);
+    $hitung = mysqli_num_rows($query);
     return $hitung;
     }
-        function hitungBaristagihan(){
+    function hitungBaristagihan(){
+    global $konek;
     $sql = "select * from tbtagihan";
-    $query = mysql_query($sql);
-    $hitung = mysql_num_rows($query);
+    $query = mysqli_query($konek,$sql);
+    $hitung = mysqli_num_rows($query);
     return $hitung;
     }
-        function hitungBarispelanggan(){
+    function hitungBarispelanggan(){
+        global $konek;
     $sql = "select * from tbpelanggan";
-    $query = mysql_query($sql);
-    $hitung = mysql_num_rows($query);
+    $query = mysqli_query($konek,$sql);
+    $hitung = mysqli_num_rows($query);
     return $hitung;
     }
-        function hitungBarispetugas(){
+    function hitungBarispetugas(){
+        global $konek;
     $sql = "select * from tblogin where Level<>'Pelanggan'";
-    $query = mysql_query($sql);
-    $hitung = mysql_num_rows($query);
+    $query = mysqli_query($konek,$sql);
+    $hitung = mysqli_num_rows($query);
     return $hitung;
     }
-        function hitungBarispembayaran(){
+    function hitungBarispembayaran(){
+        global $konek;
     $sql = "select * from tbpembayaran";
-    $query = mysql_query($sql);
-    $hitung = mysql_num_rows($query);
+    $query = mysqli_query($konek,$sql);
+    $hitung = mysqli_num_rows($query);
     return $hitung;
     }
 

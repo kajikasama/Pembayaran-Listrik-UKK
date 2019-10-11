@@ -43,9 +43,9 @@ if(isset($_SESSION['Admin']))
           <?=$hasil['Username'];?>
         </td>
         <td>
-          <?php 
+        <?php 
         $pass = $hasil['Password'];
-        for($no=1;$no>=;strlen($pass))
+        for($no=1;$no<=strlen($pass);$no++)
         {
             echo "*";
         }
