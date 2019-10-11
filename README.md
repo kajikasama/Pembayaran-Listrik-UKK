@@ -6,12 +6,12 @@ website about postpaid electricity payments (Vocational Exam 2019) Bali Global D
 
 - versi sebelumnya php5 (mysql)
 
-+ versi sekarang php 7 (mysqli)
++ versi terbaru php 7 (mysqli)
 ngubah file koneksi.php (mysql jadi mysqli)
 
 - older version php 5 (mysql)
 
-+ lates version php 7 (mysqli)
++ latest version php 7 (mysqli)
 change file koneksi.php (mysql to be mysqli)
 
 
